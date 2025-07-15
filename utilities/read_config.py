@@ -53,3 +53,11 @@ class ReadConfigLP:
     def expected_title():
         exp_title = config.get('login page', 'expected_title')
         return exp_title
+
+
+class Url:
+
+    @staticmethod
+    def expected_url():
+        exp_title = config.get('Url', 'expected_title')
+        return exp_title
