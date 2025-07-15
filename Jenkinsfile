@@ -2,12 +2,11 @@ pipeline {
     agent {
         docker {
             image 'python:3.12'
-            args '--env WDM_LOCAL=1'
+            args '-u root' // Run as root to fix apt-get permissions
         }
     }
 
     environment {
-        PYTHON = 'python3'
         VENV_DIR = '.venv'
     }
 
@@ -20,39 +19,51 @@ pipeline {
 
         stage('Setup Environment') {
             steps {
-                sh """
-                    apt-get update
-                    apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
-                    ${PYTHON} -m venv ${VENV_DIR}
-                    . ${VENV_DIR}/bin/activate
-                    ${PYTHON} -m pip install --upgrade pip
-                    pip install -r requirements.txt
-                """
+                sh '''
+                    echo "Updating package list and installing venv..."
+                    apt-get update && apt-get install -y python3-venv
+
+                    echo "Creating virtual environment..."
+                    if [ ! -d "$VENV_DIR" ]; then
+                      python3 -m venv $VENV_DIR
+                    fi
+
+                    echo "Activating virtual environment and installing dependencies..."
+                    . $VENV_DIR/bin/activate
+
+                    if [ -f requirements.txt ]; then
+                      pip install --upgrade pip
+                      pip install -r requirements.txt
+                    else
+                      echo "requirements.txt not found. Skipping pip install."
+                    fi
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh """
-                    . ${VENV_DIR}/bin/activate
+                sh '''
+                    echo "Activating virtual environment and running tests..."
+                    . $VENV_DIR/bin/activate
+
+                    # Your custom test command
                     pytest -v -s testcases/ --browser chrome
-                """
+                '''
             }
         }
     }
 
     post {
         always {
-            sh """
-                . ${VENV_DIR}/bin/activate
-                pip freeze > requirements.txt
-            """
+            echo 'Pipeline finished. Cleaning up...'
         }
         success {
-            echo 'Tests passed successfully!'
+            echo '✅ Build and tests completed successfully.'
         }
         failure {
-            echo 'Tests failed. Please check the logs.'
+            echo '❌ Pipeline failed. Check logs above.'
         }
     }
-}
+// This Jenkinsfile defines a pipeline that uses a Docker container with Python 3.12
+// to set up a virtual environment, install dependencies, and run tests.
