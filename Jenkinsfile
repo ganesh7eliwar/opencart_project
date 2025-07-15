@@ -21,6 +21,8 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 sh """
+                    apt-get update
+                    apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
                     ${PYTHON} -m venv ${VENV_DIR}
                     . ${VENV_DIR}/bin/activate
                     ${PYTHON} -m pip install --upgrade pip
@@ -33,7 +35,7 @@ pipeline {
             steps {
                 sh """
                     . ${VENV_DIR}/bin/activate
-                    pytest -v -s testcases/ --browser=chrome
+                    pytest -v -s testcases/ --browser chrome
                 """
             }
         }
