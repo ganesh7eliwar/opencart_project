@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'python:3.12'
-            args '-u root' // Run as root to fix apt-get permissions
+            args '-u root'  // Needed to install system packages like Chrome
         }
     }
 
@@ -20,23 +20,24 @@ pipeline {
         stage('Setup Environment') {
             steps {
                 sh '''
-                    echo "Updating package list and installing venv..."
-                    apt-get update && apt-get install -y python3-venv
+                    echo "Updating package list and installing dependencies..."
+                    apt-get update && apt-get install -y wget curl gnupg python3-venv
 
-                    echo "Creating virtual environment..."
+                    echo "Installing Google Chrome..."
+                    wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+                    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+                    apt-get update
+                    apt-get install -y google-chrome-stable
+
+                    echo "Creating Python virtual environment..."
                     if [ ! -d "$VENV_DIR" ]; then
-                      python3 -m venv $VENV_DIR
+                        python3 -m venv $VENV_DIR
                     fi
 
-                    echo "Activating virtual environment and installing dependencies..."
+                    echo "Activating virtual environment and installing Python dependencies..."
                     . $VENV_DIR/bin/activate
-
-                    if [ -f requirements.txt ]; then
-                      pip install --upgrade pip
-                      pip install -r requirements.txt
-                    else
-                      echo "requirements.txt not found. Skipping pip install."
-                    fi
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
                 '''
             }
         }
@@ -47,7 +48,6 @@ pipeline {
                     echo "Activating virtual environment and running tests..."
                     . $VENV_DIR/bin/activate
 
-                    # Your custom test command
                     pytest -v -s testcases/ --browser chrome
                 '''
             }
@@ -66,5 +66,5 @@ pipeline {
         }
     }
 }
-// This Jenkinsfile defines a pipeline that uses a Docker container with Python 3.12
-// to set up a virtual environment, install dependencies, and run tests.
+// Jenkinsfile for Python project with Docker and Google Chrome
+// This Jenkinsfile sets up a Docker environment, installs Google Chrome, creates a Python virtual environment
