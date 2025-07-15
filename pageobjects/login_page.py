@@ -29,11 +29,11 @@ class LoginPage:
 
     def confirmation_txt(self):
         cnf_text = self.driver.find_element(By.ID, self.cnf_text_id)
-        cnf_text.screenshot(f'./screenshots/test_login_page_03_pass{timestamp}.png')
+        cnf_text.screenshot(f'./screenshots/test_login_page_03_pass_{timestamp}.png')
 
     def alert_message(self):
         alert_msg = self.driver.find_element(By.CSS_SELECTOR, self.alert_msg_css_selector)
-        alert_msg.screenshot(f'./screenshots/test_login_page_03_fail{timestamp}.png')
+        alert_msg.screenshot(f'./screenshots/test_login_page_03_fail_{timestamp}.png')
 
     def logout_button(self):
         logout_btn = self.driver.find_element(By.LINK_TEXT, self.logout_btn_link_text)
