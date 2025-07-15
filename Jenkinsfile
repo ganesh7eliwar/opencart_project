@@ -1,10 +1,35 @@
 pipeline {
     agent any
 
+    environment {
+        PYTHON = 'python3'
+        VENV_DIR = '.venv'
+    }
+
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Hello World'
+                checkout scm
+            }
+        }
+
+        stage('Setup Environment') {
+            steps {
+                sh """
+                    ${PYTHON} -m venv ${VENV_DIR}
+                    . ${VENV_DIR}/bin/activate
+                    ${PYTHON} -m pip install --upgrade pip
+                    pip install -r requirements.txt
+                """
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh """
+                    . ${VENV_DIR}/bin/activate
+                    pytest -v -s testcases/ --browser=chrome
+                """
             }
         }
     }
