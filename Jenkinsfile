@@ -65,5 +65,6 @@ pipeline {
             echo '❌ Pipeline failed. Check logs above.'
         }
     }
+}
 // This Jenkinsfile defines a pipeline that uses a Docker container with Python 3.12
 // to set up a virtual environment, install dependencies, and run tests.
