@@ -8,7 +8,7 @@ from utilities.read_config import ReadConfigRP
 from pytest_metadata.plugin import metadata_key
 from datetime import datetime
 
-timestamp = datetime.now().strftime("%d%m%Y%H%M%S")
+now = datetime.now().strftime("%d%m%Y%H%M%S")
 URL = ReadConfigRP.url()
 
 """ ############################################# BROWSER SETUP #################################################### """
@@ -23,6 +23,8 @@ headless_option.add_experimental_option('excludeSwitches', ['enable-logging'])
 headless_option.add_argument('--headless')
 
 firefox_serv_manager = Service(GeckoDriverManager().install())
+
+
 # edge_serv_manager = Service(EdgeChromiumDriverManager().install())
 
 
@@ -85,13 +87,15 @@ def pytest_configure(config):
         "Environment": "Staging"
     }
 
+
 @pytest.hookimpl(optionalhook=True)
 def pytest_metadata(metadata):
     metadata.pop("Plugins", None)
     metadata.pop("Platform", None)
     metadata.pop("JAVA_HOME", None)
 
+
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
-    config.option.htmlpath = f'./reports/html_report_{timestamp}.html'
+    config.option.htmlpath = f'./reports/html_report_{now}.html'
     config.option.self_contained_html = True
