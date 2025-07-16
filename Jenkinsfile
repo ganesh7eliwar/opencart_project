@@ -41,6 +41,7 @@ pipeline {
     post {
         always {
             echo '📦 Pipeline completed (success or failure).'
+            archiveArtifacts artifacts: 'reports/*.html, screenshots/*.png, logs/*.log', fingerprint: true
         }
         success {
             echo '✅ All tests passed!'
