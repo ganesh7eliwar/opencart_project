@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+# from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from utilities.read_config import ReadConfigRP
 from pytest_metadata.plugin import metadata_key
 from datetime import datetime
@@ -23,7 +23,7 @@ headless_option.add_experimental_option('excludeSwitches', ['enable-logging'])
 headless_option.add_argument('--headless')
 
 firefox_serv_manager = Service(GeckoDriverManager().install())
-edge_serv_manager = Service(EdgeChromiumDriverManager().install())
+# edge_serv_manager = Service(EdgeChromiumDriverManager().install())
 
 
 def pytest_addoption(parser):
@@ -39,9 +39,9 @@ def setup(request):
     elif browser == 'firefox':
         print('\nTest Run on Firefox Browser.')
         driver = webdriver.Firefox(service=firefox_serv_manager)
-    elif browser == 'edge':
-        print('\nTest Run on Edge Browser.')
-        driver = webdriver.Edge(service=edge_serv_manager)
+    # elif browser == 'edge':
+    #     print('\nTest Run on Edge Browser.')
+    #     driver = webdriver.Edge(service=edge_serv_manager)
     else:
         print('\nTest Run on Headless Browser.')
         driver = webdriver.Chrome(service=chrome_serv_manager, options=headless_option)
