@@ -80,3 +80,4 @@ def pytest_metadata(metadata):
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
     config.option.htmlpath = f'./reports/html_report_{timestamp}.html'
+    config.option.self_contained_html = True
