@@ -17,12 +17,11 @@ pipeline {
             steps {
                 echo '🐍 Setting up Python virtual environment...'
                 bat '''
-                    if not exist %VENV_DIR% (
-                        python -m venv %VENV_DIR%
+                    if not exist .venv (
+                    python -m venv .venv
                     )
-                    call %VENV_DIR%\\Scripts\\activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
+                    call .venv\\Scripts\\activate
+                    pip install --quiet --no-input --disable-pip-version-check --requirement requirements.txt
                 '''
             }
         }
@@ -31,7 +30,7 @@ pipeline {
             steps {
                 echo '🧪 Running Selenium tests for OpenCart...'
                 bat '''
-                    call %VENV_DIR%\\Scripts\\activate
+                    call .venv\\Scripts\\activate
                     pytest -v -s testcases/ --browser chrome
                 '''
             }
@@ -42,6 +41,15 @@ pipeline {
         always {
             echo '📦 Pipeline completed (success or failure).'
             archiveArtifacts artifacts: 'reports/*.html, screenshots/*.png, logs/*.log', fingerprint: true
+            publishHTML([
+                reportDir: 'reports',
+                reportFiles: 'html_report_*.html',
+                reportName: 'OpenCart Test Report',
+                reportTitles: 'Test Execution Summary',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
         }
         success {
             echo '✅ All tests passed!'
