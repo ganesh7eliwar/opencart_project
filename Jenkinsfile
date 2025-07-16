@@ -8,14 +8,14 @@ pipeline {
     stages {
         stage('Checkout Source') {
             steps {
-                echo '📥 Checking out source code...'
+                echo 'Checking out source code...'
                 checkout scm
             }
         }
 
         stage('Setup Python Environment') {
             steps {
-                echo '🐍 Setting up Python virtual environment...'
+                echo 'Setting up Python virtual environment...'
                 bat '''
                     if not exist .venv (
                     python -m venv .venv
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run OpenCart Tests') {
             steps {
-                echo '🧪 Running Selenium tests for OpenCart...'
+                echo 'Running Selenium tests for OpenCart...'
                 bat '''
                     call .venv\\Scripts\\activate
                     pytest -v -s testcases/ --browser chrome
@@ -39,23 +39,14 @@ pipeline {
 
     post {
         always {
-            echo '📦 Pipeline completed (success or failure).'
+            echo 'Pipeline completed (success or failure).'
             archiveArtifacts artifacts: 'reports/*.html, screenshots/*.png, logs/*.log', fingerprint: true
-            publishHTML([
-                reportDir: 'reports',
-                reportFiles: 'html_report_*.html',
-                reportName: 'OpenCart Test Report',
-                reportTitles: 'Test Execution Summary',
-                keepAll: true,
-                alwaysLinkToLastBuild: true,
-                allowMissing: false
-            ])
         }
         success {
-            echo '✅ All tests passed!'
+            echo 'All tests passed!'
         }
         failure {
-            echo '❌ Test or setup failed. Check logs.'
+            echo 'Test or setup failed. Check logs.'
         }
     }
 }
