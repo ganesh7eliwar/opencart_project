@@ -387,3 +387,161 @@
 2025-07-16 17:18:41,060 | INFO | TestURL | test_url | 17 | Testcase test_url Passed.
 2025-07-16 17:18:41,930 | INFO | TestURL | test_url | 19 | Captured Screenshot
 2025-07-16 17:18:41,930 | INFO | TestURL | test_url | 28 | ========== Test Session Finished. ==========
+2025-07-16 19:54:44,077 | INFO | TestLoginDDT | test_login_ddt | 15 | ********** Test Session Started. **********
+2025-07-16 19:54:44,097 | INFO | TestLoginDDT | test_login_ddt | 18 | Number of Rows in Table: 5 including Header.
+2025-07-16 19:54:44,098 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 1.
+2025-07-16 19:54:44,429 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 19:54:44,861 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 19:54:45,183 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@outlook.com.
+2025-07-16 19:54:45,362 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@88.
+2025-07-16 19:54:46,335 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 19:54:46,336 | INFO | TestLoginDDT | test_login_ddt | 45 | Entered into If Block.
+2025-07-16 19:54:46,353 | INFO | TestLoginDDT | test_login_ddt | 47 | Entered into Nested If Block within If Block.
+2025-07-16 19:54:46,354 | INFO | TestLoginDDT | test_login_ddt | 49 | Appended data to Status List.
+2025-07-16 19:54:46,887 | INFO | TestLoginDDT | test_login_ddt | 51 | Clicked on Logout Button.
+2025-07-16 19:54:46,887 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 2.
+2025-07-16 19:54:47,086 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 19:54:47,567 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 19:54:47,821 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@outlook.com.
+2025-07-16 19:54:48,775 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@89.
+2025-07-16 19:54:49,518 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 19:54:49,518 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 19:54:49,673 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 19:54:49,674 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 19:54:49,674 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 3.
+2025-07-16 19:54:49,945 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 19:54:50,373 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 19:54:50,584 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@gmail.com.
+2025-07-16 19:54:50,798 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@88.
+2025-07-16 19:54:50,965 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 19:54:50,965 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 19:54:57,569 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 19:54:57,570 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 19:54:57,571 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 4.
+2025-07-16 19:54:57,881 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 19:54:58,214 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 19:54:58,408 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@yahoomail.com.
+2025-07-16 19:54:58,534 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@91.
+2025-07-16 19:54:59,123 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 19:54:59,123 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 19:54:59,189 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 19:54:59,189 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 19:54:59,190 | INFO | TestLoginDDT | test_login_ddt | 71 | Entered into If Block for Assertion.
+2025-07-16 19:54:59,190 | INFO | TestLoginDDT | test_login_ddt | 72 | If Fail not in Status List Testcase Passed.
+2025-07-16 19:54:59,191 | INFO | TestLoginDDT | test_login_ddt | 73 | Status List: ['Pass', 'Pass', 'Pass', 'Pass']
+2025-07-16 19:54:59,191 | INFO | TestLoginDDT | test_login_ddt | 81 | ========== Test Session Finished. ==========
+2025-07-16 19:55:04,713 | INFO | TestLogin | test_login_page_03 | 19 | ********** Test Session Started. **********
+2025-07-16 19:55:07,365 | INFO | TestLogin | test_login_page_03 | 22 | Clicked on my_account dropdown button.
+2025-07-16 19:55:08,332 | INFO | TestLogin | test_login_page_03 | 24 | Clicked on login button.
+2025-07-16 19:55:08,765 | INFO | TestLogin | test_login_page_03 | 28 | Inserted data into Email textbox. --> oojri@outlook.com
+2025-07-16 19:55:08,962 | INFO | TestLogin | test_login_page_03 | 30 | Inserted data into first name textbox. --> Iamsteve@88
+2025-07-16 19:55:14,694 | INFO | TestLogin | test_login_page_03 | 32 | Clicked on login button.
+2025-07-16 19:55:14,728 | INFO | TestLogin | test_login_page_03 | 37 | Entered into if Block
+2025-07-16 19:55:15,450 | INFO | TestLogin | test_login_page_03 | 39 | Captured Screenshot
+2025-07-16 19:55:15,547 | INFO | TestLogin | test_login_page_03 | 41 | Clicked on my account button
+2025-07-16 19:55:16,131 | INFO | TestLogin | test_login_page_03 | 43 | Clicked on log out button
+2025-07-16 19:55:16,132 | INFO | TestLogin | test_login_page_03 | 44 | Testcase Passed
+2025-07-16 19:55:16,132 | INFO | TestLogin | test_login_page_03 | 54 | ========== Test Session Finished. ==========
+2025-07-16 19:55:32,310 | INFO | TestLoginPage | test_register_page_02 | 22 | ********** Test Session Started. **********
+2025-07-16 19:55:32,691 | INFO | TestLoginPage | test_register_page_02 | 25 | Clicked on my_account dropdown button.
+2025-07-16 19:55:33,622 | INFO | TestLoginPage | test_register_page_02 | 27 | Clicked on register button.
+2025-07-16 19:55:33,962 | INFO | TestLoginPage | test_register_page_02 | 31 | Inserted data into first name textbox. --> Steven
+2025-07-16 19:55:34,123 | INFO | TestLoginPage | test_register_page_02 | 33 | Inserted data into last name textbox. --> Smith
+2025-07-16 19:55:34,313 | INFO | TestLoginPage | test_register_page_02 | 35 | Inserted data into email textbox. --> hvkpz@outlook.com
+2025-07-16 19:55:34,540 | INFO | TestLoginPage | test_register_page_02 | 37 | Inserted telephone number into telephone textbox. --> 1143596254
+2025-07-16 19:55:34,723 | INFO | TestLoginPage | test_register_page_02 | 39 | Inserted password. --> Iamsteve@88
+2025-07-16 19:55:35,009 | INFO | TestLoginPage | test_register_page_02 | 41 | Inserted confirm password. --> Iamsteve@88
+2025-07-16 19:55:35,193 | INFO | TestLoginPage | test_register_page_02 | 43 | Clicked on news letter radio button.
+2025-07-16 19:55:35,356 | INFO | TestLoginPage | test_register_page_02 | 45 | Clicked on privacy policy checkbox.
+2025-07-16 19:55:36,657 | INFO | TestLoginPage | test_register_page_02 | 47 | Clicked on Continue Button.
+2025-07-16 19:55:36,684 | INFO | TestLoginPage | test_register_page_02 | 50 | Entered into if Block
+2025-07-16 19:55:37,268 | INFO | TestLoginPage | test_register_page_02 | 52 | Captured Screenshot
+2025-07-16 19:55:37,386 | INFO | TestLoginPage | test_register_page_02 | 54 | Clicked on my account button
+2025-07-16 19:55:44,355 | INFO | TestLoginPage | test_register_page_02 | 56 | Clicked on log out button
+2025-07-16 19:55:44,356 | INFO | TestLoginPage | test_register_page_02 | 57 | Testcase Passed
+2025-07-16 19:55:44,357 | INFO | TestLoginPage | test_register_page_02 | 66 | ========== Test Session Finished. ==========
+2025-07-16 19:55:53,024 | INFO | TestURL | test_url | 10 | ********** Test Session Started. **********
+2025-07-16 19:55:53,080 | INFO | TestURL | test_url | 12 | Title of the Page is: Your Store
+2025-07-16 19:55:53,104 | INFO | TestURL | test_url | 16 | Entered into if Block.
+2025-07-16 19:55:53,105 | INFO | TestURL | test_url | 17 | Testcase test_url Passed.
+2025-07-16 19:55:54,313 | INFO | TestURL | test_url | 19 | Captured Screenshot
+2025-07-16 19:55:54,313 | INFO | TestURL | test_url | 28 | ========== Test Session Finished. ==========
+2025-07-16 20:08:27,287 | INFO | TestLoginDDT | test_login_ddt | 15 | ********** Test Session Started. **********
+2025-07-16 20:08:27,309 | INFO | TestLoginDDT | test_login_ddt | 18 | Number of Rows in Table: 5 including Header.
+2025-07-16 20:08:27,309 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 1.
+2025-07-16 20:08:27,689 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 20:08:29,102 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 20:08:29,852 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@outlook.com.
+2025-07-16 20:08:30,109 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@88.
+2025-07-16 20:08:31,866 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 20:08:31,866 | INFO | TestLoginDDT | test_login_ddt | 45 | Entered into If Block.
+2025-07-16 20:08:31,912 | INFO | TestLoginDDT | test_login_ddt | 47 | Entered into Nested If Block within If Block.
+2025-07-16 20:08:31,912 | INFO | TestLoginDDT | test_login_ddt | 49 | Appended data to Status List.
+2025-07-16 20:08:32,411 | INFO | TestLoginDDT | test_login_ddt | 51 | Clicked on Logout Button.
+2025-07-16 20:08:32,411 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 2.
+2025-07-16 20:08:32,597 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 20:08:32,952 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 20:08:33,181 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@outlook.com.
+2025-07-16 20:08:33,340 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@89.
+2025-07-16 20:08:34,303 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 20:08:34,303 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 20:08:34,330 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 20:08:34,330 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 20:08:34,330 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 3.
+2025-07-16 20:08:34,473 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 20:08:34,851 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 20:08:35,081 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@gmail.com.
+2025-07-16 20:08:35,386 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@88.
+2025-07-16 20:08:36,467 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 20:08:36,468 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 20:08:36,505 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 20:08:36,506 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 20:08:36,506 | INFO | TestLoginDDT | test_login_ddt | 28 | Entered into for loop, Interation No.: 4.
+2025-07-16 20:08:36,984 | INFO | TestLoginDDT | test_login_ddt | 34 | Clicked on My Account Button.
+2025-07-16 20:08:39,376 | INFO | TestLoginDDT | test_login_ddt | 36 | Clicked on Login Button.
+2025-07-16 20:08:40,294 | INFO | TestLoginDDT | test_login_ddt | 38 | Entered Email Address: oojri@yahoomail.com.
+2025-07-16 20:08:40,673 | INFO | TestLoginDDT | test_login_ddt | 40 | Entered Password: Iamsteve@91.
+2025-07-16 20:08:42,404 | INFO | TestLoginDDT | test_login_ddt | 42 | Clicked on Login Button.
+2025-07-16 20:08:42,405 | INFO | TestLoginDDT | test_login_ddt | 58 | Entered into Elif Block.
+2025-07-16 20:08:42,462 | INFO | TestLoginDDT | test_login_ddt | 66 | Entered into Else Block.
+2025-07-16 20:08:42,462 | INFO | TestLoginDDT | test_login_ddt | 68 | Appended Data to Status List.
+2025-07-16 20:08:42,463 | INFO | TestLoginDDT | test_login_ddt | 71 | Entered into If Block for Assertion.
+2025-07-16 20:08:42,464 | INFO | TestLoginDDT | test_login_ddt | 72 | If Fail not in Status List Testcase Passed.
+2025-07-16 20:08:42,464 | INFO | TestLoginDDT | test_login_ddt | 73 | Status List: ['Pass', 'Pass', 'Pass', 'Pass']
+2025-07-16 20:08:42,464 | INFO | TestLoginDDT | test_login_ddt | 81 | ========== Test Session Finished. ==========
+2025-07-16 20:08:48,235 | INFO | TestLogin | test_login_page_03 | 19 | ********** Test Session Started. **********
+2025-07-16 20:08:50,598 | INFO | TestLogin | test_login_page_03 | 22 | Clicked on my_account dropdown button.
+2025-07-16 20:08:51,430 | INFO | TestLogin | test_login_page_03 | 24 | Clicked on login button.
+2025-07-16 20:08:51,947 | INFO | TestLogin | test_login_page_03 | 28 | Inserted data into Email textbox. --> oojri@outlook.com
+2025-07-16 20:08:52,177 | INFO | TestLogin | test_login_page_03 | 30 | Inserted data into first name textbox. --> Iamsteve@88
+2025-07-16 20:08:53,358 | INFO | TestLogin | test_login_page_03 | 32 | Clicked on login button.
+2025-07-16 20:08:53,375 | INFO | TestLogin | test_login_page_03 | 37 | Entered into if Block
+2025-07-16 20:08:53,922 | INFO | TestLogin | test_login_page_03 | 39 | Captured Screenshot
+2025-07-16 20:08:54,019 | INFO | TestLogin | test_login_page_03 | 41 | Clicked on my account button
+2025-07-16 20:08:54,610 | INFO | TestLogin | test_login_page_03 | 43 | Clicked on log out button
+2025-07-16 20:08:54,610 | INFO | TestLogin | test_login_page_03 | 44 | Testcase Passed
+2025-07-16 20:08:54,611 | INFO | TestLogin | test_login_page_03 | 54 | ========== Test Session Finished. ==========
+2025-07-16 20:09:03,192 | INFO | TestLoginPage | test_register_page_02 | 22 | ********** Test Session Started. **********
+2025-07-16 20:09:03,974 | INFO | TestLoginPage | test_register_page_02 | 25 | Clicked on my_account dropdown button.
+2025-07-16 20:09:05,449 | INFO | TestLoginPage | test_register_page_02 | 27 | Clicked on register button.
+2025-07-16 20:09:05,926 | INFO | TestLoginPage | test_register_page_02 | 31 | Inserted data into first name textbox. --> Steven
+2025-07-16 20:09:06,183 | INFO | TestLoginPage | test_register_page_02 | 33 | Inserted data into last name textbox. --> Smith
+2025-07-16 20:09:06,404 | INFO | TestLoginPage | test_register_page_02 | 35 | Inserted data into email textbox. --> ylfaf@outlook.com
+2025-07-16 20:09:06,570 | INFO | TestLoginPage | test_register_page_02 | 37 | Inserted telephone number into telephone textbox. --> 1143596254
+2025-07-16 20:09:06,789 | INFO | TestLoginPage | test_register_page_02 | 39 | Inserted password. --> Iamsteve@88
+2025-07-16 20:09:06,984 | INFO | TestLoginPage | test_register_page_02 | 41 | Inserted confirm password. --> Iamsteve@88
+2025-07-16 20:09:07,176 | INFO | TestLoginPage | test_register_page_02 | 43 | Clicked on news letter radio button.
+2025-07-16 20:09:07,428 | INFO | TestLoginPage | test_register_page_02 | 45 | Clicked on privacy policy checkbox.
+2025-07-16 20:09:08,513 | INFO | TestLoginPage | test_register_page_02 | 47 | Clicked on Continue Button.
+2025-07-16 20:09:08,564 | INFO | TestLoginPage | test_register_page_02 | 50 | Entered into if Block
+2025-07-16 20:09:09,150 | INFO | TestLoginPage | test_register_page_02 | 52 | Captured Screenshot
+2025-07-16 20:09:09,251 | INFO | TestLoginPage | test_register_page_02 | 54 | Clicked on my account button
+2025-07-16 20:09:10,657 | INFO | TestLoginPage | test_register_page_02 | 56 | Clicked on log out button
+2025-07-16 20:09:10,658 | INFO | TestLoginPage | test_register_page_02 | 57 | Testcase Passed
+2025-07-16 20:09:10,658 | INFO | TestLoginPage | test_register_page_02 | 66 | ========== Test Session Finished. ==========
+2025-07-16 20:09:16,701 | INFO | TestURL | test_url | 10 | ********** Test Session Started. **********
+2025-07-16 20:09:18,461 | INFO | TestURL | test_url | 12 | Title of the Page is: Your Store
+2025-07-16 20:09:18,476 | INFO | TestURL | test_url | 16 | Entered into if Block.
+2025-07-16 20:09:18,477 | INFO | TestURL | test_url | 17 | Testcase test_url Passed.
+2025-07-16 20:09:19,267 | INFO | TestURL | test_url | 19 | Captured Screenshot
+2025-07-16 20:09:19,267 | INFO | TestURL | test_url | 28 | ========== Test Session Finished. ==========

@@ -1,5 +1,5 @@
 pipeline {
-    agent any  // Use any available agent (local Jenkins or connected node)
+    agent any
 
     environment {
         VENV_DIR = '.venv'  // Local virtual environment directory
@@ -18,7 +18,7 @@ pipeline {
                 echo 'Setting up Python virtual environment...'
                 bat '''
                     if not exist .venv (
-                    python -m venv .venv
+                        python -m venv .venv
                     )
                     call .venv\\Scripts\\activate
                     pip install --quiet --no-input --disable-pip-version-check --requirement requirements.txt
@@ -31,7 +31,7 @@ pipeline {
                 echo 'Running Selenium tests for OpenCart...'
                 bat '''
                     call .venv\\Scripts\\activate
-                    pytest -v -s testcases/ --browser chrome
+                    pytest -v -s testcases/ --browser chrome --alluredir=allurereports
                 '''
             }
         }
@@ -41,10 +41,19 @@ pipeline {
         always {
             echo 'Pipeline completed (success or failure).'
             archiveArtifacts artifacts: 'reports/*.html, screenshots/*.png, logs/*.log', fingerprint: true
+
+            // Allure report publishing
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allurereports']]
+            ])
         }
+
         success {
             echo 'All tests passed!'
         }
+
         failure {
             echo 'Test or setup failed. Check logs.'
         }

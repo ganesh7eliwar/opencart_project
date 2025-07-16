@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from utilities.read_config import ReadConfigRP
-from pytest_metadata.plugin import metadata_key
+# from pytest_metadata.plugin import metadata_key
 from datetime import datetime
 
 now = datetime.now().strftime("%d%m%Y%H%M%S")
@@ -58,13 +58,6 @@ def setup(request):
 
 # @pytest.hookimpl(tryfirst=True)
 # def pytest_configure(config):
-#     config.stash[metadata_key]["Project"] = 'OpenKart'
-#     config.stash[metadata_key]['Module Name'] = 'User Registration'
-#     config.stash[metadata_key]["Tester"] = "Ganesh"
-#     config.stash[metadata_key]["Environment"] = "Staging"
-
-# @pytest.hookimpl(tryfirst=True)
-# def pytest_configure(config):
 #     config.stash.setdefault(metadata_key, {})  # Initializes the stash entry if not already present
 #     config.stash[metadata_key]['Project'] = 'OpenKart'
 #     config.stash[metadata_key]['Module Name'] = 'User Registration'
@@ -72,27 +65,20 @@ def setup(request):
 #     config.stash[metadata_key]['Environment'] = 'Staging'
 
 
-# @pytest.hookimpl(optionalhook=True)
-# def pytest_metadata(metadata):
-#     metadata.pop('Plugins', None)
-#     metadata.pop('Platform', None)
-#     metadata.pop('JAVA_HOME', None)
-
-@pytest.hookimpl(tryfirst=True)
-def pytest_configure(config):
-    config._metadata = {
-        "Project": "OpenKart",
-        "Module Name": "User Registration",
-        "Tester": "Ganesh",
-        "Environment": "Staging"
-    }
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_configure(config):
+#     config._metadata = {
+#         "Project": "OpenKart",
+#         "Module Name": "User Registration",
+#         "Tester": "Ganesh",
+#         "Environment": "Staging"
+#     }
 
 
 @pytest.hookimpl(optionalhook=True)
 def pytest_metadata(metadata):
-    metadata.pop("Plugins", None)
-    metadata.pop("Platform", None)
-    metadata.pop("JAVA_HOME", None)
+    metadata.pop('Platform', None)
+    metadata.pop('JAVA_HOME', None)
 
 
 @pytest.hookimpl(tryfirst=True)

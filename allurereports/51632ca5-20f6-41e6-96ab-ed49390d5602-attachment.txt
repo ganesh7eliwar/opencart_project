@@ -1,0 +1,12 @@
+[32mINFO    [0m TestLogin:test_login_page.py:19 ********** Test Session Started. **********
+[32mINFO    [0m TestLogin:test_login_page.py:22 Clicked on my_account dropdown button.
+[32mINFO    [0m TestLogin:test_login_page.py:24 Clicked on login button.
+[32mINFO    [0m TestLogin:test_login_page.py:28 Inserted data into Email textbox. --> oojri@outlook.com
+[32mINFO    [0m TestLogin:test_login_page.py:30 Inserted data into first name textbox. --> Iamsteve@88
+[32mINFO    [0m TestLogin:test_login_page.py:32 Clicked on login button.
+[32mINFO    [0m TestLogin:test_login_page.py:37 Entered into if Block
+[32mINFO    [0m TestLogin:test_login_page.py:39 Captured Screenshot
+[32mINFO    [0m TestLogin:test_login_page.py:41 Clicked on my account button
+[32mINFO    [0m TestLogin:test_login_page.py:43 Clicked on log out button
+[32mINFO    [0m TestLogin:test_login_page.py:44 Testcase Passed
+[32mINFO    [0m TestLogin:test_login_page.py:54 ========== Test Session Finished. ==========
