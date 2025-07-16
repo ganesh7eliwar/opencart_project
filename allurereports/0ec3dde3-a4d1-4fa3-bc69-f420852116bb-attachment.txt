@@ -1,0 +1,18 @@
+[32mINFO    [0m TestLoginPage:test_registration_page.py:22 ********** Test Session Started. **********
+[32mINFO    [0m TestLoginPage:test_registration_page.py:25 Clicked on my_account dropdown button.
+[32mINFO    [0m TestLoginPage:test_registration_page.py:27 Clicked on register button.
+[32mINFO    [0m TestLoginPage:test_registration_page.py:31 Inserted data into first name textbox. --> Steven
+[32mINFO    [0m TestLoginPage:test_registration_page.py:33 Inserted data into last name textbox. --> Smith
+[32mINFO    [0m TestLoginPage:test_registration_page.py:35 Inserted data into email textbox. --> ebeus@outlook.com
+[32mINFO    [0m TestLoginPage:test_registration_page.py:37 Inserted telephone number into telephone textbox. --> 1143596254
+[32mINFO    [0m TestLoginPage:test_registration_page.py:39 Inserted password. --> Iamsteve@88
+[32mINFO    [0m TestLoginPage:test_registration_page.py:41 Inserted confirm password. --> Iamsteve@88
+[32mINFO    [0m TestLoginPage:test_registration_page.py:43 Clicked on news letter radio button.
+[32mINFO    [0m TestLoginPage:test_registration_page.py:45 Clicked on privacy policy checkbox.
+[32mINFO    [0m TestLoginPage:test_registration_page.py:47 Clicked on Continue Button.
+[32mINFO    [0m TestLoginPage:test_registration_page.py:50 Entered into if Block
+[32mINFO    [0m TestLoginPage:test_registration_page.py:52 Captured Screenshot
+[32mINFO    [0m TestLoginPage:test_registration_page.py:54 Clicked on my account button
+[32mINFO    [0m TestLoginPage:test_registration_page.py:56 Clicked on log out button
+[32mINFO    [0m TestLoginPage:test_registration_page.py:57 Testcase Passed
+[32mINFO    [0m TestLoginPage:test_registration_page.py:66 ========== Test Session Finished. ==========
