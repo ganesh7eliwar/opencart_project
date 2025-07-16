@@ -1,26 +1,37 @@
 pipeline {
-    agent {
-        docker {
-            image 'opencart-python:latest'
-            args '-u root'
-        }
-    }
+    agent any  // Use any available agent (local Jenkins or connected node)
 
     environment {
-        VENV_DIR = '.venv'
+        VENV_DIR = '.venv'  // Local virtual environment directory
     }
 
     stages {
-        stage('Checkout') {
+        stage('Checkout Source') {
             steps {
+                echo '📥 Checking out source code...'
                 checkout scm
             }
         }
 
-        stage('Run Tests') {
+        stage('Setup Python Environment') {
             steps {
-                sh '''
-                    echo "Running tests..."
+                echo '🐍 Setting up Python virtual environment...'
+                bat '''
+                    if not exist %VENV_DIR% (
+                        python -m venv %VENV_DIR%
+                    )
+                    call %VENV_DIR%\\Scripts\\activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Run OpenCart Tests') {
+            steps {
+                echo '🧪 Running Selenium tests for OpenCart...'
+                bat '''
+                    call %VENV_DIR%\\Scripts\\activate
                     pytest -v -s testcases/ --browser chrome
                 '''
             }
@@ -29,13 +40,13 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline finished.'
+            echo '📦 Pipeline completed (success or failure).'
         }
         success {
-            echo '✅ Tests passed.'
+            echo '✅ All tests passed!'
         }
         failure {
-            echo '❌ Tests failed.'
+            echo '❌ Test or setup failed. Check logs.'
         }
     }
 }
