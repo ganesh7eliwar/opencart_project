@@ -61,21 +61,35 @@ def setup(request):
 #     config.stash[metadata_key]["Tester"] = "Ganesh"
 #     config.stash[metadata_key]["Environment"] = "Staging"
 
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_configure(config):
+#     config.stash.setdefault(metadata_key, {})  # Initializes the stash entry if not already present
+#     config.stash[metadata_key]['Project'] = 'OpenKart'
+#     config.stash[metadata_key]['Module Name'] = 'User Registration'
+#     config.stash[metadata_key]['Tester'] = 'Ganesh'
+#     config.stash[metadata_key]['Environment'] = 'Staging'
+
+
+# @pytest.hookimpl(optionalhook=True)
+# def pytest_metadata(metadata):
+#     metadata.pop('Plugins', None)
+#     metadata.pop('Platform', None)
+#     metadata.pop('JAVA_HOME', None)
+
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
-    config.stash.setdefault(metadata_key, {})  # Initializes the stash entry if not already present
-    config.stash[metadata_key]['Project'] = 'OpenKart'
-    config.stash[metadata_key]['Module Name'] = 'User Registration'
-    config.stash[metadata_key]['Tester'] = 'Ganesh'
-    config.stash[metadata_key]['Environment'] = 'Staging'
-
+    config._metadata = {
+        "Project": "OpenKart",
+        "Module Name": "User Registration",
+        "Tester": "Ganesh",
+        "Environment": "Staging"
+    }
 
 @pytest.hookimpl(optionalhook=True)
 def pytest_metadata(metadata):
-    metadata.pop('Plugins', None)
-    metadata.pop('Platform', None)
-    metadata.pop('JAVA_HOME', None)
-
+    metadata.pop("Plugins", None)
+    metadata.pop("Platform", None)
+    metadata.pop("JAVA_HOME", None)
 
 @pytest.hookimpl(tryfirst=True)
 def pytest_configure(config):
