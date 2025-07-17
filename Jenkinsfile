@@ -31,7 +31,7 @@ pipeline {
                 echo 'Running Selenium tests for OpenCart...'
                 bat '''
                     call .venv\\Scripts\\activate
-                    pytest -v -s testcases/ --browser firefox --alluredir=allurereports
+                    pytest -v -s testcases/ --browser chrome --alluredir=allurereports
                 '''
             }
         }
