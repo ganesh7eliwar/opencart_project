@@ -1,6 +1,0 @@
-[32mINFO    [0m TestURL:test_url.py:10 ********** Test Session Started. **********
-[32mINFO    [0m TestURL:test_url.py:12 Title of the Page is: Your Store
-[32mINFO    [0m TestURL:test_url.py:16 Entered into if Block.
-[32mINFO    [0m TestURL:test_url.py:17 Testcase test_url Passed.
-[32mINFO    [0m TestURL:test_url.py:19 Captured Screenshot
-[32mINFO    [0m TestURL:test_url.py:28 ========== Test Session Finished. ==========
