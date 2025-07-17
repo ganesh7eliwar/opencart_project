@@ -42,13 +42,12 @@ class TestLogin:
         self.lp.login_button()
         self.log.info('Clicked on login button.')
 
-        self.rp = RegisterPage(self.driver)
-
         if self.driver.title == self.expected_title:
             self.log.info('Entered into if Block')
             self.lp.confirmation_txt()
             self.log.info('Captured Screenshot')
             self.lp.allure_pass()
+            self.rp = RegisterPage(self.driver)
             self.rp.my_account_dd()
             self.log.info('Clicked on my account button')
             self.rp.logout_btn()

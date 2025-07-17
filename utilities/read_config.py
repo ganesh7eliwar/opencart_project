@@ -61,3 +61,16 @@ class Url:
     def expected_url():
         exp_title = config.get('Url', 'expected_title')
         return exp_title
+
+
+class Search:
+
+    @staticmethod
+    def item_name():
+        item_n = config.get('search', 'item_name')
+        return item_n
+
+    @staticmethod
+    def expected_item():
+        exp_item =  config.get('search', 'expected_item')
+        return exp_item
