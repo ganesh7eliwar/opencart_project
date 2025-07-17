@@ -1,9 +1,10 @@
-import pytest
+from pytest import mark
 from pageobjects.register_page import RegisterPage
 from pageobjects.home_page import HomePage
 from utilities.logger import LoggenClass
 from utilities.read_config import ReadConfigRP
 from utilities.email_generator import EmailGenerator
+import allure
 
 
 class TestLoginPage:
@@ -15,7 +16,17 @@ class TestLoginPage:
     password = ReadConfigRP.password()
     log = LoggenClass.log_generator()
 
-    @pytest.mark.sanity
+    @allure.epic('Opencart Project')
+    @allure.feature('Registration')
+    @allure.story('Registering a user for the first time.')
+    @allure.label('owner', 'ganesh_sateliwar')
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.tag('sanity', 'regression')
+    @allure.link('https://tutorialsninja.com/demo/', 'Login')
+    @allure.title('Your Test')
+    @allure.description('This is a registration test.')
+    @mark.sanity
+    @mark.regression
     def test_register_page_02(self, setup):
 
         self.driver = setup
@@ -50,6 +61,7 @@ class TestLoginPage:
             self.log.info('Entered into if Block')
             self.rp.acc_creation_message()
             self.log.info('Captured Screenshot')
+            self.rp.allure_pass()
             self.rp.my_account_dd()
             self.log.info('Clicked on my account button')
             self.rp.logout_btn()
@@ -60,6 +72,7 @@ class TestLoginPage:
             self.log.info('Entered into else Block')
             self.rp.warning_message()
             self.log.info('Captured screenshot')
+            self.rp.allure_fail()
             self.log.info('Testcase Failed')
             assert False
 

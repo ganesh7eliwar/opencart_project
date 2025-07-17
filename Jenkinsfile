@@ -39,7 +39,7 @@ pipeline {
 
     post {
         always {
-            echo 'Pipeline completed (success or failure).'
+            echo 'Pipeline completed.'
             archiveArtifacts artifacts: 'reports/*.html, screenshots/*.png, logs/*.log', fingerprint: true
 
             // Allure report publishing

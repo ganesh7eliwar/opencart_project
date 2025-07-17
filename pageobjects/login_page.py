@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from datetime import datetime
+from allure_commons.types import AttachmentType
+import allure
 
 timestamp = datetime.now().strftime("%d%m%Y%H%M%S")
 
@@ -38,3 +40,11 @@ class LoginPage:
     def logout_button(self):
         logout_btn = self.driver.find_element(By.LINK_TEXT, self.logout_btn_link_text)
         logout_btn.click()
+
+    def allure_pass(self):
+        allure.attach(self.driver.get_screenshot_as_png(), name=f'Test_LoginPage_Pass_{timestamp}',
+                      attachment_type=AttachmentType.PNG)
+
+    def allure_fail(self):
+        allure.attach(self.driver.get_screenshot_as_png(), name=f'Test_LoginPage_Fail_{timestamp}',
+                      attachment_type=AttachmentType.PNG)

@@ -4,12 +4,25 @@ from pageobjects.register_page import RegisterPage
 from utilities import excelutils
 from utilities.logger import LoggenClass
 from utilities.read_config import ReadConfigLP
+from pytest import mark
+import allure
 
 
 class TestLoginDDT:
     file = './testdata/data_for_ddt.xlsx'
     log = LoggenClass.log_generator()
 
+    @allure.epic('Opencart Project')
+    @allure.feature('Data Driven Test')
+    @allure.story('Verify Login with Data')
+    @allure.label('owner', 'ganesh_sateliwar')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag('smoke', 'login')
+    @allure.link('https://tutorialsninja.com/demo/', 'Login')
+    @allure.title('Your Test')
+    @allure.description('This is a Data Driven test which gives different Inputs while Login.')
+    @mark.sanity
+    @mark.regression
     def test_login_ddt(self, setup):
 
         self.log.info('********** Test Session Started. **********')

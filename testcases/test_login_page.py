@@ -1,9 +1,10 @@
-import pytest
+from pytest import mark
 from pageobjects.home_page import HomePage
 from pageobjects.login_page import LoginPage
 from pageobjects.register_page import RegisterPage
 from utilities.logger import LoggenClass
 from utilities.read_config import ReadConfigLP
+import allure
 
 
 class TestLogin:
@@ -12,7 +13,17 @@ class TestLogin:
     password = ReadConfigLP.password()
     log = LoggenClass.log_generator()
 
-    @pytest.mark.sanity
+    @allure.epic('Opencart Project')
+    @allure.feature('Login')
+    @allure.story('Login with valid credentials')
+    @allure.label('owner', 'ganesh_sateliwar')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag('smoke')
+    @allure.link('https://tutorialsninja.com/demo/', 'Login')
+    @allure.title('Your Test')
+    @allure.description('This is login test with valid credentials.')
+    @mark.sanity
+    @mark.smoke
     def test_login_page_03(self, setup):
 
         self.driver = setup
@@ -37,6 +48,7 @@ class TestLogin:
             self.log.info('Entered into if Block')
             self.lp.confirmation_txt()
             self.log.info('Captured Screenshot')
+            self.lp.allure_pass()
             self.rp.my_account_dd()
             self.log.info('Clicked on my account button')
             self.rp.logout_btn()
@@ -48,6 +60,7 @@ class TestLogin:
             self.log.info('Entered into else Block')
             self.lp.alert_message()
             self.log.info('Captured screenshot')
+            self.lp.allure_fail()
             self.log.info('Testcase Failed')
             assert False
 
