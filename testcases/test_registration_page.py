@@ -3,17 +3,17 @@ from pageobjects.register_page import RegisterPage
 from pageobjects.home_page import HomePage
 from utilities.logger import LoggenClass
 from utilities.read_config import ReadConfigRP
-from utilities.email_generator import EmailGenerator
+from utilities.generator import Generator
 import allure
 
 
 class TestLoginPage:
     expected_title = ReadConfigRP.expected_title()
-    first_name = ReadConfigRP.first_name()
-    last_name = ReadConfigRP.last_name()
-    email = EmailGenerator.generate_email()
-    telephone = ReadConfigRP.telephone()
-    password = ReadConfigRP.password()
+    first_name = Generator.first_name()
+    last_name = Generator.last_name()
+    email = Generator.generate_email()
+    telephone = Generator.telephone()
+    password = Generator.password()
     log = LoggenClass.log_generator()
 
     @allure.epic('Opencart Project')

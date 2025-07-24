@@ -4,12 +4,12 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from utilities.read_config import ReadConfigRP
+from utilities.read_config import Url
 # from pytest_metadata.plugin import metadata_key
 from datetime import datetime
 
 now = datetime.now().strftime("%d%m%Y%H%M%S")
-URL = ReadConfigRP.url()
+URL = Url.url()
 
 """ ############################################# BROWSER SETUP #################################################### """
 
@@ -85,3 +85,16 @@ def pytest_metadata(metadata):
 def pytest_configure(config):
     config.option.htmlpath = f'./reports/html_report_{now}.html'
     config.option.self_contained_html = True
+
+
+""" ########################################### PARAMETERIZED TEST ################################################# """
+
+
+@pytest.fixture(params=[
+    ('robert_santos@gmail.com', '$TePI4HvH5%I', 'Pass'),        # Correct Username, Correct Password
+    ('robert_santos@yahoomail.com', '$TePI4HvH5%I', 'Fail'),    # Incorrect Username, Correct Password
+    ('robert_santos@gmail.com', '$TePI4H1vH5%I', 'Fail'),       # Correct Username, Incorrect Password
+    ('robert_santos@hotmail.com', '$Te3PI4HvH5%I', 'Fail')      # Incorrect Username, Incorrect Password
+])
+def data_for_login(request):
+    return request.param

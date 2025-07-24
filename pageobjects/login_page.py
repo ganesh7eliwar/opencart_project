@@ -17,11 +17,11 @@ class LoginPage:
     def __init__(self, driver):
         self.driver = driver
 
-    def e_mail_address(self, email):
+    def user_email(self, email):
         email_add = self.driver.find_element(By.ID, self.email_add_id)
         email_add.send_keys(email)
 
-    def password_textbox(self, pass_wd):
+    def user_password(self, pass_wd):
         email_password = self.driver.find_element(By.ID, self.password_id)
         email_password.send_keys(pass_wd)
 

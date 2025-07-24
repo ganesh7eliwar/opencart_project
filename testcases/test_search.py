@@ -38,9 +38,9 @@ class TestSearchItem:
         self.log.info('Clicked on login button.')
 
         self.lp = LoginPage(self.driver)
-        self.lp.e_mail_address(self.email)
+        self.lp.user_email(self.email)
         self.log.info(f'Inserted data into Email textbox. --> {self.email}')
-        self.lp.password_textbox(self.password)
+        self.lp.user_password(self.password)
         self.log.info(f'Inserted data into first name textbox. --> {self.password}.')
         self.lp.login_button()
         self.log.info('Clicked on login button.')
