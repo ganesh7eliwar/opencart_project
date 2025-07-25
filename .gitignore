@@ -215,4 +215,4 @@ __marimo__/
 *.png
 allurereports/*.txt
 allurereports/*.json
-logs/*.log
+*.log
