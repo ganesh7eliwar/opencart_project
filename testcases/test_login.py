@@ -24,7 +24,7 @@ class TestLogin:
     @allure.description('This is login test with valid credentials.')
     @mark.sanity
     @mark.smoke
-    def test_login_page_03(self, setup):
+    def test_login(self, setup):
 
         self.driver = setup
         self.log.info('********** Test Session Started. **********')

@@ -27,7 +27,7 @@ class TestLoginPage:
     @allure.description('This is a registration test.')
     @mark.sanity
     @mark.regression
-    def test_register_page_02(self, setup):
+    def test_register(self, setup):
 
         self.driver = setup
         self.log.info('********** Test Session Started. **********')
