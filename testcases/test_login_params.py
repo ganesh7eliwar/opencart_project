@@ -2,12 +2,25 @@ from pageobjects.home_page import HomePage
 from pageobjects.login_page import LoginPage
 from utilities.logger import LoggenClass
 from utilities.read_config import ReadConfigLP
+import allure
+from pytest import mark
 
 
 class TestLoginParams:
     expected_title = ReadConfigLP.expected_title()
     log = LoggenClass.log_generator()
 
+    @allure.epic('Opencart Project')
+    @allure.feature('Parameterized Test')
+    @allure.story('Verify Login with Data')
+    @allure.label('owner', 'ganesh_sateliwar')
+    @allure.severity(allure.severity_level.NORMAL)
+    @allure.tag('smoke', 'login')
+    @allure.link('https://tutorialsninja.com/demo/', 'Login')
+    @allure.title('Your Test')
+    @allure.description('This is a Parameterized test which gives different Inputs while Login.')
+    @mark.sanity
+    @mark.regression
     def test_login_params(self, setup, data_for_login):
 
         self.log.info('********** Test Session Started. **********')
